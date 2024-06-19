@@ -1,7 +1,11 @@
 const env = process.env
 
 const config = {
-  port: parseInt(env.PORT, 10) || 3000,
+  app: {
+    port: parseInt(env.PORT, 10) || 3000,
+    appName: process.env.APP_NAME || 'SMS',
+    env: process.env.NODE_ENV || 'development'
+  },
   mongoDB: {
     uri:
       env.MONGODB_URL ||

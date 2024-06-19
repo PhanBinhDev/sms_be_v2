@@ -59,14 +59,14 @@ const container = async (configurations) => {
   })
 
   // // Define services
-  const templateServices = require('./services/templateServices')({
+  const AuthServices = require('./services/AuthServices')({
     config: configurations,
     database: await container.resolve('database')
   })
 
   container.register({
     repository: asValue({
-      templateServices
+      AuthServices
     })
   })
 
